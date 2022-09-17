@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "803923951195",
+    "project_id": "flutter-oichan",
+    "storage_bucket": "flutter-oichan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803923951195:android:3f1293ba16e0ac9502897e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803923951195-qed6mejar1ceboel155dslfoi29n7b6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvQ_Ctl_8qAcc-DHHqK13iDXB7qyZpfEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803923951195-qed6mejar1ceboel155dslfoi29n7b6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
