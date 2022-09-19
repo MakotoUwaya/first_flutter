@@ -15,15 +15,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   String _value = '';
   void _setValue(String value) => setState(() => _value = value);
 
-  createDialogOption(BuildContext context, Answers answer, String str) {
-    return new SimpleDialogOption(
-      child: new Text(str),
-      onPressed: () {
-        Navigator.pop(context, answer);
-      },
-    );
-  }
-
   void openDialog(BuildContext context, int index) {
     showDialog<Answers>(
       context: context,
@@ -31,8 +22,18 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         title: Text('AlertDialog: Item $index'),
         content: const Text('アラートダイアログです。YesかNoを選択してください。'),
         actions: <Widget>[
-          createDialogOption(context, Answers.NO, 'No'),
-          createDialogOption(context, Answers.YES, 'Yes'),
+          TextButton(
+            child: const Text('No'),
+            onPressed: () {
+              Navigator.pop(context, Answers.NO);
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Yes'),
+            onPressed: () {
+              Navigator.pop(context, Answers.YES);
+            },
+          )
         ],
       ),
     ).then((value) {
