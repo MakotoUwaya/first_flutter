@@ -31,6 +31,12 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class Choice {
+  const Choice({required this.title, required this.icon});
+  final String title;
+  final IconData icon;
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   static const _screens = [
     HomeScreen(),
@@ -46,11 +52,32 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List<Choice> choices = const <Choice>[
+    Choice(title: 'Settings', icon: Icons.settings),
+    Choice(title: 'My Location', icon: Icons.my_location),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          // overflow menu
+          PopupMenuButton<Choice>(
+            onSelected: (Choice choice) {
+              // Selected Action
+            },
+            itemBuilder: (BuildContext context) {
+              return choices.map((Choice choice) {
+                return PopupMenuItem<Choice>(
+                  value: choice,
+                  child: Text(choice.title),
+                );
+              }).toList();
+            },
+          ),
+        ],
       ),
       body: IndexedStack(
         index: _selectedIndex,
