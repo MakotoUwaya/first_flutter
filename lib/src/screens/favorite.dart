@@ -31,6 +31,17 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ElevatedButton(
             child: const Text('Yes'),
             onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: const Text('「Yes」が押されました'),
+                  action: SnackBarAction(
+                    label: '閉じる',
+                    onPressed: () {
+                      // Code to execute.
+                    },
+                  ),
+                ),
+              );
               Navigator.pop(context, Answers.YES);
             },
           )
